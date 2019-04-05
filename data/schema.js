@@ -4,6 +4,7 @@ import resolvers from './resolvers';
 
 const typeDefs = `
 type Query {
+  testString: [Author]
   author(firstName: String, lastName: String): Author
   allAuthors: [Author]
   getFortuneCookie: String @cacheControl(maxAge: 5000)
@@ -21,6 +22,7 @@ type Post {
   views: Int
   author: Author
 }
+
 `;
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });

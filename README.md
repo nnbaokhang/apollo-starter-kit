@@ -9,7 +9,7 @@ Up-to-date documentation and explanations can be found in the [Apollo Server doc
 ## Getting started
 
 ```bash
-git clone https://github.com/apollostack/apollo-starter-kit
+git clone https://github.com/nnbaokhang/apollo-starter-kit
 cd apollo-starter-kit
 npm install
 npm start
@@ -34,6 +34,7 @@ and hit the play button (cmd-return), then you should get this on the right side
   }
 }
 ```
+```json
 {
   author(firstName: "Edmond", lastName: "Jones"){
     firstName
@@ -42,3 +43,5 @@ and hit the play button (cmd-return), then you should get this on the right side
   getFortuneCookie
 }
 ```
+Noted: I copy this repo from https://github.com/apollographql/apollo-tutorial-kit 
+for learning purpose only
