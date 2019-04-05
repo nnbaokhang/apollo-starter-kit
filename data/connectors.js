@@ -4,6 +4,20 @@ import _ from 'lodash';
 import fetch from 'node-fetch';
 import Mongoose from 'mongoose';
 
+Mongoose.Promise = global.Promise;
+// Our focus is on mongodb so here it is
+const mongo = Mongoose.connect('mongodb://localhost/views', {
+    useMongoClient: true
+});
+
+const ViewSchema = Mongoose.Schema({
+    postId: Number,
+    views: Number
+});
+
+const View = Mongoose.model('views', ViewSchema);
+
+//SQL database
 const db = new Sequelize('blog', null, null, {
     dialect: 'sqlite',
     storage: './blog.sqlite'
@@ -21,19 +35,6 @@ const PostModel = db.define('post', {
 
 AuthorModel.hasMany(PostModel);
 PostModel.belongsTo(AuthorModel);
-
-Mongoose.Promise = global.Promise;
-// Our focus is on mongodb so here it is
-const mongo = Mongoose.connect('mongodb://localhost/views', {
-    useMongoClient: true
-});
-
-const ViewSchema = Mongoose.Schema({
-    postId: Number,
-    views: Number
-});
-
-const View = Mongoose.model('views', ViewSchema);
 
 // modify the mock data creation to also create some views:
 casual.seed(123);
