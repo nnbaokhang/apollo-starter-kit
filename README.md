@@ -34,3 +34,11 @@ and hit the play button (cmd-return), then you should get this on the right side
   }
 }
 ```
+{
+  author(firstName: "Edmond", lastName: "Jones"){
+    firstName
+    lastName
+  }
+  getFortuneCookie
+}
+```
