@@ -6,9 +6,7 @@ from many sources such as local database, remote database or Third party API(Can
 -> send data to resolvers -> send data to schema and all the data will be here
 const schema = makeExecutableSchema({ typeDefs, resolvers });
  */
-const mocks = {
-    String: () => 'It works!'
-};
+
 const resolvers = {
     Query: {
         testString(){
